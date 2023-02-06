@@ -1,0 +1,105 @@
+{
+	"info": {
+		"_postman_id": "43609ddb-f6ec-4d0f-ac5e-e5d5b86ef8f9",
+		"name": "test application",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25649809"
+	},
+	"item": [
+		{
+			"name": "test Post",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "message",
+						"value": "bonjour",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "localhost:5000/?message=bonjour",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						""
+					],
+					"query": [
+						{
+							"key": "message",
+							"value": "bonjour"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test Put",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/?message=bonjour",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						""
+					],
+					"query": [
+						{
+							"key": "message",
+							"value": "bonjour"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "testGet",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000",
+					"host": [
+						"localhost"
+					],
+					"port": "5000"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test Patch",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/?message=bonjour",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						""
+					],
+					"query": [
+						{
+							"key": "message",
+							"value": "bonjour"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

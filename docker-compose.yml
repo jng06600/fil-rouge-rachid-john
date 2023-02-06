@@ -1,0 +1,36 @@
+services:
+  db:
+    image: mysql:5.7
+    command: --init-file /data/application/init.sql
+
+    volumes:
+      - ./init.sql:/data/application/init.sql
+      - test-mysql-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: test  
+    ports:
+      - "3306:3306"
+    networks:
+      - backend  
+  web:
+    build: .
+    depends_on:
+      - db
+      - redis
+    ports:
+      - "5000:5000"
+    networks:
+      - backend
+      - frontend  
+  redis:
+    image: redis:6.0-alpine
+    ports:
+      - "6379:6379"
+    networks:
+      - frontend
+networks:
+  backend:
+  frontend:      
+volumes:
+  test-mysql-data:
